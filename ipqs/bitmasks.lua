@@ -1,0 +1,45 @@
+local flag = {
+  IS_PROXY = 0x1,
+  IS_VPN = 0x2,
+  IS_TOR = 0x4,
+  IS_CRAWLER = 0x8,
+  IS_BOT = 0x10,
+  RECENT_ABUSE = 0x20,
+  IS_BLACKLISTED = 0x40,
+  IS_PRIVATE = 0x80,
+
+  IS_MOBILE = 0x1,
+  HAS_OPEN_PORTS = 0x2,
+  IS_HOSTING_PROVIDER = 0x4,
+  ACTIVE_VPN = 0x8,
+  ACTIVE_TOR = 0x10,
+  PUBLIC_ACCESS_POINT = 0x20,
+
+  --CONNECTION1 = 0x8,
+  --CONNECTION2 = 0x10,
+  --CONNECTION3 = 0x20,
+
+  RESIDENTIAL = 0x20, -- 00 100 000
+  MOBILE = 0x10,      -- 00 010 000
+  CORPORATE = 0x30,   -- 00 110 000
+  DATA_CENTER = 0x8,  -- 00 001 000
+  EDUCATION = 0x28,   -- 00 101 000
+
+
+  --ABUSE1 = 0x40,
+  --ABUSE2 = 0x80,
+  ABUSE_LOW = 0x80,
+  ABUSE_MEDIUM = 0x40,
+  ABUSE_HIGH = 0xC0, -- 0x80 + 0x40
+
+  CONNECTION_MASK = 0x38, -- 00 111 000
+  ABUSE_MASK = 0xC0,
+}
+
+return flag
+
+-- 001 Residential
+-- 010 Mobile
+-- 011 Corporate
+-- 100 Data Center
+-- 101 Education
